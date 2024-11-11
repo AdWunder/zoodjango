@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Zoo</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Bienvenue au Zoo</h1>
+        <button onclick="toggleEventSidebar()" class="event-button">Événements</button>
+    </header>
+
+    <main class="container">
+        <!-- Section Enclos -->
+        <section class="section">
+            <h2 class="section-title">Enclos</h2>
+            {% for enclos in enclos_list %}
+            <article class="enclos-card">
+                <div class="establishment-image">
+                    {% if enclos.image %}
+                        <img src="{{ enclos.image }}" alt="{{ enclos.nom }}">
+                    {% else %}
+                        <h1> pas d'image pour l'instant </h1>
+                    {% endif %}
+                </div>
+                <div class="establishment-content">
+                    <h3 class="establishment-title">{{ enclos.nom }}</h3>
+                    <p class="establishment-info">{{ enclos.description }}</p>
+                    <div class="establishment-meta">
+                        <span class="badge">{{ enclos.superficie }} m²</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </section>
+
+        <!-- Section Animaux -->
+        <section class="section">
+            <h2 class="section-title">Animaux</h2>
+            {% for animal in animaux_list %}
+            <article class="establishment-card">
+                <div class="establishment-image">
+                    {% if animal.image %}
+                        <img src="{{ animal.image.url }}" alt="{{ animal.nom }}">
+                    {% else %}
+                        <h1>Pas d'image pour l'instant</h1>
+                    {% endif %}
+                </div>
+                <div class="establishment-content">
+                    <h3 class="establishment-title">{{ animal.nom }}</h3>
+                    <p class="establishment-info">{{ animal.description }}</p>
+                    <p class="establishment-meta">
+                        <span class="badge">Arrivé le {{ animal.date_arrivee }}</span>
+                        <a href="{% url 'detail_animal' animal.id %}" class="view-button">Voir l'animal</a> 
+                    </p>
+                </div>
+            </article>
+            {% endfor %}
+        </section>
+
+        <!-- Section Soigneurs -->
+        <section class="section">
+            <h2 class="section-title">Soigneurs</h2>
+            <ul class="staff-list">
+                {% for soigneur in soigneurs_list %}
+                <li class="staff-item">
+                    <div class="staff-info">
+                        <h3 class="staff-name">{{ soigneur.nom }}</h3>
+                        <p class="staff-meta">{{ soigneur.experience }} ans d'expérience</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <aside class="event-sidebar">
+        <h2 class="sidebar-title">Événements</h2>
+        <ul class="event-list">
+            {% for event in evenements_list %}
+            <li class="event-item">
+                <h3 class="event-name">{{ event.nom }}</h3>
+                <p class="event-description">{{ event.description }}</p>
+                <p class="event-details">
+                    <span class="event-date">{{ event.date }}</span> à 
+                    <span class="event-time">{{ event.heure }}</span> - 
+                    <span class="event-location">{{ event.enclos.nom }}</span> 
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+    </aside>
+    
+    
+</body>
+</html>
+
+<script>
+    // JS
+    document.querySelector('.event-sidebar').style.display = 'none';
+
+    function toggleEventSidebar() {
+        const sidebar = document.querySelector('.event-sidebar');
+        sidebar.style.display = (sidebar.style.display === 'none') ? 'block' : 'none';
+    }
+</script>

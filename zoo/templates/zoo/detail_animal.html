@@ -1,0 +1,56 @@
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/detail_animal.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header class="header">
+        <h1>Détails de {{ animal.nom }}</h1>
+        <a href="{% url 'index' %}" class="event-button">Accueil</a>
+    </header>
+    
+    <main class="container">
+        <section class="section animal-detail">
+            <article class="animal-card">
+                
+                <!-- Image de l'animal -->
+                <div class="animal-image">
+                    {% if animal.image %}
+                        <img src="{{ animal.image.url }}" alt="Image de {{ animal.nom }}">
+                    {% else %}
+                        <h1>Pas d'image pour cet animal</h1>
+                    {% endif %}
+                </div>
+                
+                <!-- Informations sur l'animal -->
+                <div class="animal-info">
+                    <h3>{{ animal.nom }}</h3>
+                    <p><strong>Date de naissance :</strong> {{ animal.date_naissance|date:"d/m/Y" }}</p>
+                    <p><strong>Date d'arrivée au zoo :</strong> {{ animal.date_arrivee|date:"d/m/Y" }}</p>
+                    <p><strong>Description :</strong> {{ animal.description }}</p>
+                    
+                    <!-- Enclos de l'animal -->
+                    <h4>Enclos actuel :</h4>
+                    <p><strong>Nom de l'enclos :</strong> {{ animal.enclos.nom }}</p>
+                    <p><strong>Description :</strong> {{ animal.enclos.description }}</p>
+                    <p><strong>Superficie :</strong> {{ animal.enclos.superficie }} m²</p>
+
+                    <!-- Formulaire pour changer l'enclos -->
+                    <h4>Modifier l'enclos :</h4>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Mettre à jour l'enclos</button>
+                    </form>
+
+                    <!-- Soigneur de l'animal -->
+                    <h4>Soigneur :</h4>
+                    <p><strong>Nom :</strong> {{ animal.soigneur.nom }}</p>
+                    <p><em>Expérience :</em> {{ animal.soigneur.experience }} ans</p>
+                    <p><em>Description :</em> {{ animal.soigneur.description }}</p>
+                </div>
+            </article>
+        </section>
+    </main>
+{% endblock %}

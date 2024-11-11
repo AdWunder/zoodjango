@@ -1,0 +1,14 @@
+{% extends 'zoo/base.html' %}
+
+{% block title %}Liste des Animaux{% endblock %}
+
+{% block content %}
+    <h2>Liste des Animaux</h2>
+    <ul>
+        {% for animal in animaux %}
+            <li>
+                <a href="{% url 'detail_animal' animal.id %}">{{ animal.nom }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

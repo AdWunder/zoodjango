@@ -1,0 +1,141 @@
+{
+  "enclos": [
+    {
+      "nom": "La Savane",
+      "description": "Un grand enclos avec des herbes hautes, des roches et des arbres. Un endroit idéal pour les félins.",
+      "superficie": 1000.00,
+      "image":"static/templates/images/savane.png"
+    },
+    {
+      "nom": "Les Plaines Africaines",
+      "description": "Un enclos spacieux pour les herbivores avec des acacias et de grandes étendues de terre.",
+      "superficie": 1500.00,
+      "image":"static/templates/images/plaines.png"
+    },
+    {
+      "nom": "Le Panda Park",
+      "description": "Un espace tranquille et boisé dédié aux pandas, avec des bambous et des zones d'ombre.",
+      "superficie": 800.00,
+      "image":"static/templates/images/enclos_pandas.png"
+    },
+    {
+      "nom": "L'Enclos des Éléphants",
+      "description": "Un grand espace avec de l'eau, de l'herbe et des endroits pour se rafraîchir pour les éléphants.",
+      "superficie": 1200.00,
+      "image":"static/templates/images/enclos_elef.png"
+    }
+  ],
+  "animaux": [
+    {
+      "nom": "Simba",
+      "description": "Un lion majestueux, roi de la savane.",
+      "enclos": "La Savane",
+      "date_naissance": "2015-04-01",
+      "date_arrivee": "2016-05-10",
+      "soigneur": "Lucien Robert",
+      "image":"static/templates/images/lion.png"
+    },
+    {
+      "nom": "Mufasa",
+      "description": "Un autre lion, plus âgé, sage et imposant.",
+      "enclos": "La Savane",
+      "date_naissance": "2010-06-15",
+      "date_arrivee": "2011-08-01",
+      "soigneur": "Lucien Robert",
+      "image":"static/templates/images/lion2.png"
+    },
+    {
+      "nom": "Dumbo",
+      "description": "Un éléphant d'Afrique majestueux avec de grandes oreilles.",
+      "enclos": "L'Enclos des Éléphants",
+      "date_naissance": "2012-02-20",
+      "date_arrivee": "2013-03-05",
+      "soigneur": "Emma Smith",
+      "image":"static/templates/images/elephant.png"
+    },
+    {
+      "nom": "Babar",
+      "description": "Un éléphant plus jeune, énergique et curieux.",
+      "enclos": "L'Enclos des Éléphants",
+      "date_naissance": "2014-08-09",
+      "date_arrivee": "2015-09-01",
+      "soigneur": "Emma Smith",
+      "image":"static/templates/images/elephant2.png"
+    },
+    {
+      "nom": "Panda",
+      "description": "Un panda géant calme, aime se nourrir de bambou.",
+      "enclos": "Le Panda Park",
+      "date_naissance": "2017-11-03",
+      "date_arrivee": "2018-01-15",
+      "soigneur": "Georges Duroy",
+      "image":"static/templates/images/panda.png"
+    },
+    {
+      "nom": "Bao Bao",
+      "description": "Une jeune femelle panda, pleine de curiosité et de joie.",
+      "enclos": "Le Panda Park",
+      "date_naissance": "2018-07-15",
+      "date_arrivee": "2019-02-01",
+      "soigneur": "Georges Duroy",
+      "image":"static/templates/images/panda2.png"
+    }
+  ],
+  "soigneurs": [
+    {
+      "nom": "Jean Dupont",
+      "experience": 5,
+      "description": "Jean s'occupe des lions et autres grands félins du zoo."
+    },
+    {
+      "nom": "Emma Smith",
+      "experience": 7,
+      "description": "Emma est spécialisée dans les soins aux éléphants, elle veille à leur bien-être quotidien."
+    },
+    {
+      "nom": "Georges Duroy",
+      "experience": 4,
+      "description": "Georges aime les pandas et est toujours à la recherche des meilleures méthodes pour les nourrir."
+    },
+    {
+      "nom": "Sophie Martin",
+      "experience": 6,
+      "description": "Sophie s'occupe principalement des herbivores comme les girafes et les éléphants."
+    },
+    {
+      "nom": "Lucien Robert",
+      "experience": 8,
+      "description": "Lucien est passionné par les animaux carnivores, en particulier les lions et les tigres."
+    }
+  ],
+  "evenements": [
+    {
+      "nom": "Rencontre avec les Lions",
+      "description": "Venez rencontrer les lions du zoo et découvrir leur habitat naturel.",
+      "date": "2024-11-15",
+      "heure": "14:00",
+      "enclos": "La Savane"
+    },
+    {
+      "nom": "Alimentation des Pandas",
+      "description": "Observez les soigneurs nourrir les pandas et apprenez-en plus sur leur alimentation.",
+      "date": "2024-11-16",
+      "heure": "10:00",
+      "enclos": "Le Panda Park"
+    },
+    {
+      "nom": "Balade avec les Éléphants",
+      "description": "Participez à une balade accompagnée d'un soigneur avec les éléphants du zoo.",
+      "date": "2024-11-17",
+      "heure": "11:00",
+      "enclos": "L'Enclos des Éléphants"
+    },
+    {
+      "nom": "Démonstration de Dressage de Lions",
+      "description": "Assistez à une démonstration fascinante de dressage de lions réalisée par nos soigneurs expérimentés.",
+      "date": "2024-11-18",
+      "heure": "15:00",
+      "enclos": "La Savane"
+    }
+  ]
+}

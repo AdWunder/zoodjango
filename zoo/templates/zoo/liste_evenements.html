@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Événements</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Liste des Événements</h1>
+    <ul>
+        {% for evenement in evenements %}
+            <li>{{ evenement.titre }} - {{ evenement.date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

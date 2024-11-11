@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f7f7f7;
+    color: #2d3436;
+    line-height: 1.5;
+}
+
+/* Header */
+.header {
+    background-color: black;
+    padding: 16px 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.animal-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.animal-image {
+    flex: 1;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.animal-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Informations sur l'animal */
+.animal-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.animal-info h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+}
+
+.animal-info p {
+    margin: 8px 0;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Formulaire */
+form {
+    margin-top: 20px;
+}
+
+form button {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
+
+h4 {
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+.event-sidebar {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 300px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #eee;
+    z-index: 50;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.event-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.event-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.event-details {
+    font-size: 12px;
+    color: #888;
+}
+
+.event-button {
+    background-color: #000;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+}
+
+@media (max-width: 768px) {
+    .animal-card {
+        flex-direction: column;
+    }
+
+    .animal-image {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .animal-info h3 {
+        font-size: 24px;
+    }
+
+    .animal-info p {
+        font-size: 14px;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
